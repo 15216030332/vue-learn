@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            template: `
+                <div>
+                    单向绑定
+                    <input type="text" v-bind:value="name" :class="name"/><br>
+                    双向绑定
+                    <input type="text" v-model="name"><br>
+
+                    <button v-on:click="btnCli">{{ name }}</button>
+                </div>
+            `,
+            data: function () {
+                return {
+                    name: 'test'
+                }
+            },
+            methods:{
+                btnCli:function () {
+                    this.name = '通过按钮改变'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

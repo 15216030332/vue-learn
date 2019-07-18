@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            template: `
+                <div>
+                    <div v-text="mytext"></div>
+                    <div v-html="myhtml"></div>
+                    <button v-if="num==1">v-if</button>
+                    <button v-else-if="num==2">v-else-if</button>
+                    <button v-else>v-else</button>
+                    <button v-show="isShow">v-show</button>
+
+                    <ul>
+                        <li v-for="(aa,ind) in arrayFor">{{aa}} {{ind}}</li>
+                    </ul>
+
+                    <ul>
+                        <li v-for="(attr,k) in object">{{attr}}  {{k}}</li>
+                    </ul>
+                </div>
+            `,
+            data: function () {
+                return {
+                    myhtml:'<h1>我使用v-html</h1>',
+                    mytext:'<h1>我使用v-text</h1>',
+                    isShow: false,
+                    num:3,
+                    arrayFor:['美女1号','美女2号','美女3号'],
+                    object:{
+                        name:'cxk',
+                        old:22,
+                        sex:'女'
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

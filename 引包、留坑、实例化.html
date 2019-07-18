@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            template:`
+                <div>
+                    <div>我是模板{{ msg }}  {{time}}</div>
+                </div>
+            `,
+            data:function () {
+                return {
+                    msg:'hellow Vue',
+                    time:'20190710'
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
